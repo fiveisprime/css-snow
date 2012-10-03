@@ -1,0 +1,260 @@
+/**********************************************
+ Based on the CSS3 snow demo created
+ by Estelle Weyl (@estellevw) available at:
+ http://www.standardista.com/sxsw/
+***********************************************/
+
+/* make sure horizontal scrollbars don't pop up because snowflakes stray over the edge */
+body {
+  overflow-x: hidden;
+}
+
+/* snowflakes container */
+#snow-container {
+  top: -15px;
+  position: absolute;
+  width: 100%;
+}
+
+/* default animation and transform */
+.snow {
+  position: absolute;
+  display: inline-block;
+  opacity: 0.5;
+  height: 1px;
+  width: 1px;
+  z-index: -1;
+  -webkit-border-radius: 100%;
+     -moz-border-radius: 100%;
+          border-radius: 100%;
+  -webkit-transform-origin: left -20px;
+     -moz-transform-origin: left -20px;
+      -ms-transform-origin: left -20px;
+       -o-transform-origin: left -20px;
+          transform-origin: left -20px;
+  -webkit-animation: falling 10.7s linear 2s infinite;
+     -moz-animation: falling 10.7s linear 2s infinite;
+  border: 1px solid #fff;
+  border-width: 1px 0 1px 0;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+     -moz-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+          box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+}
+
+.snow:before {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.150);
+  content: '';
+  height: 5%;
+  left: -100%;
+  position: absolute;
+  top: 50%;
+  width: 250%;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+     -moz-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+          box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+}
+.snow:after {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.150);
+  content: '';
+  height: 5%;
+  left: -75%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 250%;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+     -moz-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+          box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+}
+
+/* animation used for ALL snowflakes, 1000px will be updated by Snowflakes.create() to reflect true height of window */
+@keyframes falling {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 1000px) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes falling {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 1000px, 0) rotate(360deg);
+  }
+}
+
+@-moz-keyframes falling {
+  0% {
+    -moz-transform: translate3d(0,0,0) rotate(0deg);
+  }
+  100% {
+    -moz-transform: translate(0,1000px) rotate(360deg);
+  }
+}
+
+@-o-keyframes falling {
+  0% {
+    -o-transform: translate3d(0,0,0) rotate(0deg);
+  }
+  100% {
+    -o-transform: translate(0,1000px) rotate(360deg);
+  }
+}
+
+/* different sizes, and default origins based on size */
+.snow-large {
+  height: 7px;
+  width: 7px;
+  -webkit-transform-origin: left -30px;
+     -moz-transform-origin: left -30px;
+      -ms-transform-origin: left -30px;
+       -o-transform-origin: left -30px;
+          transform-origin: left -30px;
+}
+.snow-med {
+  height: 5px;
+  width: 5px;
+  -webkit-transform-origin: left -30px;
+     -moz-transform-origin: left -30px;
+      -ms-transform-origin: left -30px;
+       -o-transform-origin: left -30px;
+          transform-origin: left -30px;
+}
+.snow-small {
+  height: 3px;
+  width: 3px;
+  -webkit-transform-origin: -30px 0;
+     -moz-transform-origin: -30px 0;
+      -ms-transform-origin: -30px 0;
+       -o-transform-origin: -30px 0;
+          transform-origin: -30px 0;
+}
+
+/* different speeds so flakes look just that much different */
+.snow-slow {
+  -webkit-animation-duration: 7.1s;
+     -moz-animation-duration: 7.1s;
+          animation-duration: 7.1s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: -10px -20px;
+     -moz-transform-origin: -10px -20px;
+      -ms-transform-origin: -10px -20px;
+       -o-transform-origin: -10px -20px;
+          transform-origin: -10px -20px;
+}
+
+.snow-med {
+  -webkit-animation-duration: 6.6s;
+     -moz-animation-duration: 6.6s;
+          animation-duration: 6.6s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: -10px -20px;
+     -moz-transform-origin: -10px -20px;
+      -ms-transform-origin: -10px -20px;
+       -o-transform-origin: -10px -20px;
+          transform-origin: -10px -20px;
+}
+
+.snow-fast {
+  -webkit-animation-duration: 5.9s;
+     -moz-animation-duration: 5.9s;
+          animation-duration: 5.9s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: -10px -20px;
+     -moz-transform-origin: -10px -20px;
+      -ms-transform-origin: -10px -20px;
+       -o-transform-origin: -10px -20px;
+          transform-origin: -10px -20px;
+}
+
+/* different opacities so flakes look just that much different */
+.snow-faint {
+  opacity: 0.1;
+}
+.snow-light {
+  opacity: 0.3;
+}
+.snow-dark {
+  opacity: 0.7;
+}
+
+/* different delays so they don't all start at the same time */
+.snow-delay-1 {
+  -webkit-animation-delay: 3.4s;
+     -moz-animation-delay: 3.4s;
+}
+.snow-delay-2 {
+  -webkit-animation-delay: 1.5s;
+     -moz-animation-delay: 1.5s;
+}
+.snow-delay-3 {
+  -webkit-animation-delay: 4.6s;
+     -moz-animation-delay: 4.6s;
+}
+.snow-delay-4 {
+  -webkit-animation-delay: 6.3s;
+     -moz-animation-delay: 6.3s;
+}
+.snow-delay-5 {
+  -webkit-animation-delay: 0.4s;
+     -moz-animation-delay: 0.4s;
+}
+.snow-delay-6 {
+  -webkit-animation-delay: 8.1s;
+     -moz-animation-delay: 8.1s;
+}
+
+/* playing with timing functions to make it a teeny bit more random like */
+.snow-large.snow-delay-2 {
+  -webkit-animation-timing-function: ease-in-out;
+     -moz-animation-timing-function: ease-in-out;
+}
+
+.snow-large.snow-delay-1 {
+  -webkit-animation-timing-function: ease-out;
+     -moz-animation-timing-function: ease-out;
+}
+
+/* playing with opacity to make it a teeny bit more random like */
+.snow-med.snow-delay-2 {
+  opacity: 0.5
+}
+
+.snow-med.snow-delay-1 {
+  opacity: 0.3
+}
+
+.snow-fast.snow-delay-2 {
+  opacity: 0.7
+}
+
+.snow-fast.snow-delay-1 {
+  opacity: 0.6;
+  -webkit-animation-timing-function:ease-in;
+     -moz-animation-timing-function:ease-in;
+          animation-timing-function:ease-in;
+  -webkit-transform-origin: left 10px;
+     -moz-transform-origin: left 10px;
+      -ms-transform-origin: left 10px;
+       -o-transform-origin: left 10px;
+          transform-origin: left 10px;
+}
+
+.snow-slow {
+  opacity: 0.8
+}
