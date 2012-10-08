@@ -1,5 +1,13 @@
-body {
-  background-color: SteelBlue;
+html {
   font-family: helvetica, sans serif;
   font-size: 14px;
+  height: 100%;
+  background: #499bea; /* Old browsers */
+  background: -moz-linear-gradient(top, #499bea 0%, #207ce5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#499bea), color-stop(100%,#207ce5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #499bea 0%,#207ce5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #499bea 0%,#207ce5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #499bea 0%,#207ce5 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #499bea 0%,#207ce5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=0 ); /* IE6-9 */
 }
