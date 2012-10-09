@@ -9,20 +9,20 @@ body {
   overflow-x: hidden;
 }
 
-/* snowflakes container */
 #snow-container {
   top: -15px;
   position: absolute;
   width: 100%;
 }
 
-/* default animation and transform */
 .snow {
   position: absolute;
   display: inline-block;
-  opacity: 0.5;
+  border: 1px solid #fff;
+  border-width: 1px 0 1px 0;
   height: 1px;
   width: 1px;
+  opacity: 0.5;
   z-index: -1;
   -webkit-border-radius: 100%;
      -moz-border-radius: 100%;
@@ -34,8 +34,6 @@ body {
           transform-origin: left -20px;
   -webkit-animation: falling 10.7s linear 2s infinite;
      -moz-animation: falling 10.7s linear 2s infinite;
-  border: 1px solid #fff;
-  border-width: 1px 0 1px 0;
   -webkit-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
      -moz-box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
           box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
@@ -44,7 +42,7 @@ body {
 .snow:before {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.150);
-  content: '';
+  content: '\00a0';
   height: 5%;
   left: -100%;
   position: absolute;
@@ -57,7 +55,7 @@ body {
 .snow:after {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.150);
-  content: '';
+  content: '\00a0';
   height: 5%;
   left: -75%;
   position: absolute;
@@ -110,7 +108,6 @@ body {
   }
 }
 
-/* different sizes, and default origins based on size */
 .snow-large {
   height: 7px;
   width: 7px;
@@ -139,7 +136,6 @@ body {
           transform-origin: -30px 0;
 }
 
-/* different speeds so flakes look just that much different */
 .snow-slow {
   -webkit-animation-duration: 7.1s;
      -moz-animation-duration: 7.1s;
@@ -182,7 +178,6 @@ body {
           transform-origin: -10px -20px;
 }
 
-/* different opacities so flakes look just that much different */
 .snow-faint {
   opacity: 0.1;
 }
@@ -193,7 +188,6 @@ body {
   opacity: 0.7;
 }
 
-/* different delays so they don't all start at the same time */
 .snow-delay-1 {
   -webkit-animation-delay: 3.4s;
      -moz-animation-delay: 3.4s;
@@ -219,7 +213,6 @@ body {
      -moz-animation-delay: 8.1s;
 }
 
-/* playing with timing functions to make it a teeny bit more random like */
 .snow-large.snow-delay-2 {
   -webkit-animation-timing-function: ease-in-out;
      -moz-animation-timing-function: ease-in-out;
@@ -230,7 +223,6 @@ body {
      -moz-animation-timing-function: ease-out;
 }
 
-/* playing with opacity to make it a teeny bit more random like */
 .snow-med.snow-delay-2 {
   opacity: 0.5
 }
