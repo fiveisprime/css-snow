@@ -18,7 +18,7 @@ Include the references:
 ````
 
 Make sure that you have a container with an ID that can be used as the page container. This is where
-the snow will be populated how the keyframes animation determines height.
+the snow will be populated and how the keyframes animation determines height.
 
 Add a `div` for the snow:
 
@@ -28,7 +28,7 @@ Add a `div` for the snow:
 </div>
 ````
 
-Add the desired amount of snow using JavaScript (note that keyframes animations are pretty CPU intensive and will make you sad).
+Add the desired amount of snow using JavaScript (note that keyframes animations are pretty CPU intensive and might make you sad).
 
 ````javascript
 snow.addSnow('container','snow-container', 40);

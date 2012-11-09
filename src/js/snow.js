@@ -1,5 +1,7 @@
 !function(window) {
 
+  "use strict";
+  
   var proto = {
 
     /**
@@ -18,7 +20,8 @@
       ''
     , 'snow-small'
     , 'snow-med'
-    , 'snow-large']
+    , 'snow-large'
+    ]
 
     /**
      * Variables speeds of snow particles.
@@ -29,7 +32,8 @@
       ''
     , 'snow-slow'
     , 'snow-med'
-    , 'snow-fast']
+    , 'snow-fast'
+    ]
 
     /**
      * Variable opacities of snow particles.
@@ -40,7 +44,8 @@
       ''
     , 'snow-faint'
     , 'snow-light'
-    , 'snow-dark']
+    , 'snow-dark'
+    ]
 
     /**
      * Variable keyframe delays for snow particles.
@@ -54,7 +59,8 @@
     , 'snow-delay-3'
     , 'snow-delay-4'
     , 'snow-delay-5'
-    , 'snow-delay-6']
+    , 'snow-delay-6'
+    ]
 
     /**
      * Creates a pseudo-random number between the specified start and end values.
@@ -109,11 +115,11 @@
           height = window.innerHeight;
         }
 
-        if (keyframe.cssText.match(new RegExp('-webkit-'))) {
+        if (keyframe.cssText.match(/-webkit-/)) {
           rule = '100% { -webkit-transform: translate3d(0,' + height + 'px,0) rotate(360deg); }';
-        } else if (keyframe.cssText.match(new RegExp('-moz-'))) {
+        } else if (keyframe.cssText.match(/-moz-/)) {
           rule = '-moz-transform: translate(0,' + height + 'px) rotate(360deg);';
-        } else if (keyframe.cssText.match(new RegExp('-o-'))) {
+        } else if (keyframe.cssText.match(/-o-/)) {
           rule = '-o-transform: translate(0,' + height + 'px) rotate(360deg);';
         }
 
@@ -144,7 +150,7 @@
 
         snowflake.setAttribute('id', 'snowId' + this.idIndex);
         snowflake.setAttribute('class', 'snow ' + size + ' ' + speed + ' ' + opacity + ' ' + delay);
-        snowflake.setAttribute('style','left: ' + this.randomBetween(0, 100) + '%;');
+        snowflake.setAttribute('style', 'left: ' + this.randomBetween(0, 100) + '%;');
         this.snowContainer.appendChild(snowflake);
 
         i++;

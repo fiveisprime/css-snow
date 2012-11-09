@@ -92,19 +92,19 @@ body {
 
 @-moz-keyframes falling {
   0% {
-    -moz-transform: translate3d(0,0,0) rotate(0deg);
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg);
   }
   100% {
-    -moz-transform: translate(0,1000px) rotate(360deg);
+    -moz-transform: translate(0, 1000px) rotate(360deg);
   }
 }
 
 @-o-keyframes falling {
   0% {
-    -o-transform: translate3d(0,0,0) rotate(0deg);
+    -o-transform: translate3d(0, 0, 0) rotate(0deg);
   }
   100% {
-    -o-transform: translate(0,1000px) rotate(360deg);
+    -o-transform: translate(0, 1000px) rotate(360deg);
   }
 }
 
@@ -237,9 +237,9 @@ body {
 
 .snow-fast.snow-delay-1 {
   opacity: 0.6;
-  -webkit-animation-timing-function:ease-in;
-     -moz-animation-timing-function:ease-in;
-          animation-timing-function:ease-in;
+  -webkit-animation-timing-function: ease-in;
+     -moz-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
   -webkit-transform-origin: left 10px;
      -moz-transform-origin: left 10px;
       -ms-transform-origin: left 10px;
